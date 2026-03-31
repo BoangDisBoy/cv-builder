@@ -1,12 +1,10 @@
 <?php
-// Personal Info
 $name = $_POST['name'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
 $summary = $_POST['summary'];
 $skills = $_POST['skills'];
 
-// Education
 $elementary = $_POST['elementary'];
 $elementary_year = $_POST['elementary_year'];
 
@@ -16,7 +14,6 @@ $secondary_year = $_POST['secondary_year'];
 $tertiary = $_POST['tertiary'];
 $tertiary_year = $_POST['tertiary_year'];
 
-// Profile photo
 $targetDir = "uploads/";
 if (!file_exists($targetDir)) {
     mkdir($targetDir);
@@ -38,6 +35,7 @@ if (!empty($_FILES["profile"]["name"])) {
     <title>Your CV</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 
 <body>
@@ -56,7 +54,6 @@ if (!empty($_FILES["profile"]["name"])) {
             <ul>
                 <?php
                 $skillsArray = explode("\n", $_POST['skills']);
-
                 foreach ($skillsArray as $skill) {
                     $skill = trim($skill);
                     if (!empty($skill)) {
@@ -65,6 +62,7 @@ if (!empty($_FILES["profile"]["name"])) {
                 }
                 ?>
             </ul>
+
             <h2>Education</h2>
 
             <!-- Primary Education -->
@@ -88,7 +86,6 @@ if (!empty($_FILES["profile"]["name"])) {
                 <span class="year"><?php echo htmlspecialchars($_POST['tertiary_year']); ?></span>
             </div>
 
-
         </div>
 
         <!-- MAIN -->
@@ -97,20 +94,19 @@ if (!empty($_FILES["profile"]["name"])) {
                 <h1><?php echo htmlspecialchars($name); ?></h1>
                 <div class="position"><?php echo htmlspecialchars($_POST['position']); ?></div>
             </div>
-            <!-- About Me -->
+
+            <!-- Profile -->
             <section>
                 <h2>Profile</h2>
                 <p><?php echo nl2br(htmlspecialchars($summary)); ?></p>
             </section>
 
+            <!-- Work Experience -->
             <h2>Work Experience</h2>
-
             <?php
             if (!empty($_POST['company'])) {
                 $count = count($_POST['company']);
-
                 for ($i = 0; $i < $count; $i++) {
-
                     $company = htmlspecialchars($_POST['company'][$i]);
                     $year = htmlspecialchars($_POST['work_year'][$i]);
                     $desc = htmlspecialchars($_POST['work_desc'][$i]);
