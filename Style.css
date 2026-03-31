@@ -1,0 +1,294 @@
+:root {
+  --dark: #1b263b;
+  --blue: #3a506b;
+  --soft-blue: #5bc0be;
+  --light: #f0f4f8;
+  --tan: #d6efff;
+  --line-color: #a8cde6;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: var(--light);
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-container {
+  width: 50%;
+  margin: 40px auto;
+  background: var(--tan);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  color: var(--dark);
+  margin: 0;
+  padding: 0;
+  font-size: 60px;
+}
+
+h2 {
+  color: var(--green);
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background-color: var(--line-color);
+  margin: 10px 0 20px 0;
+}
+
+.minimal-hr {
+  width: 70%;
+  margin: 10px auto;
+  border: none;
+  height: 1px;
+  background-color: var(--line-color);
+}
+
+input,
+textarea {
+  width: 90%;
+  padding: 12px;
+  margin: 10px auto;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid var(--soft-blue);
+  background: var(--light);
+}
+
+button {
+  background: var(--blue);
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: block;
+  margin: 20px auto;
+  width: 50%;
+}
+
+button:hover {
+  background: var(--dark);
+}
+
+.cv-container {
+  display: flex;
+  width: 80%;
+  margin: 40px auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar {
+  width: 30%;
+  background: var(--blue);
+  color: white;
+  padding: 25px;
+}
+
+.sidebar h2 {
+  position: relative;
+  padding-bottom: 5px;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.sidebar h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: var(--soft-blue);
+}
+
+.sidebar h3 + ul {
+  margin-bottom: 20px;
+}
+
+.sidebar i,
+.main h2 i {
+  color: white;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.sidebar ul {
+  margin-left: 40px;
+  padding-left: 20px;
+}
+
+.sidebar ul li {
+  margin-bottom: 20px;
+}
+
+.main {
+  width: 70%;
+  padding: 30px;
+  background: white;
+}
+
+.main h1 {
+  color: var(--dark);
+  text-align: left;
+  margin: 60px 0 0 40px;
+  font-size: 60px;
+}
+
+.main .position {
+  text-align: left;
+  color: var(--soft-blue);
+  font-weight: 500;
+  font-size: 20px;
+  margin: 0 40px 40px 40px;
+  font-style: italic;
+}
+
+.profile {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 4px solid var(--tan);
+  margin: auto;
+  display: block;
+}
+
+.work-item {
+  display: flex;
+  justify-content: space-between; /* push company left, year right */
+  align-items: flex-start;
+  margin-left: 40px;
+  margin-right: 40px; /* optional for spacing */
+  margin-bottom: 15px;
+}
+
+.work-item .company {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--dark);
+}
+
+.work-item .year {
+  font-weight: bold;
+  white-space: nowrap; /* prevent wrapping */
+}
+
+.education-label {
+  text-align: left;
+  font-weight: bold;
+  color: var(--green);
+  margin-left: 40px;
+}
+
+.edu-item {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  margin-left: 40px;
+  margin-right: 20px;
+  line-height: 1.4;
+}
+
+.edu-item .school {
+  flex-grow: 1;
+  margin-right: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.edu-item .year {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.work-desc {
+  line-height: 1.8;
+  color: var(--dark);
+  text-align: justify;
+  white-space: pre-line;
+  margin-left: 40px;
+  margin-bottom: 15px;
+  text-indent: 30px;
+}
+
+.main p {
+  line-height: 1.8;
+  color: var(--dark);
+  text-align: justify;
+  word-wrap: break-word;
+  white-space: pre-line;
+  text-indent: 30px;
+}
+
+.main p strong {
+  color: #354024;
+}
+
+.main section p {
+  margin-left: 40px;
+  margin-bottom: 10px;
+  text-indent: 0;
+}
+
+.main ul {
+  margin-left: 40px;
+  padding-left: 20px;
+}
+
+.main ul li {
+  margin-bottom: 5px;
+}
+
+.sidebar p.contact-item {
+  margin-left: 40px;
+  margin-bottom: 10px;
+}
+
+.main h2,
+.sidebar h3 {
+  position: relative;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+.main h2::after,
+.sidebar h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: var(--soft-blue);
+}
+
+@media (max-width: 768px) {
+  .cv-container {
+    flex-direction: column;
+  }
+}
