@@ -318,8 +318,6 @@ body {
     margin: 10px 0;
   }
 }
-<<<<<<< HEAD:style.css
-=======
 @media (max-width: 768px) {
   html,
   body {
@@ -375,4 +373,3 @@ body {
     padding-bottom: 5px;
   }
 }
->>>>>>> 0cfd7be (Update mobile responsive CSS and full-width CV/form layout):Style.css
